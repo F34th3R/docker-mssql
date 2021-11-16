@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  mssql_test:
+    container_name: msql_test
+    build: .
+    ports:
+      - "11433:1433"
+    environment:
+      SA_PASSWORD: "secretp@assword"
+      ACCEPT_EULA: "y"
+      MSSQL_PID: "enterprise"
+    volumes:
+      - mssql_test:/var/opt/mssql
+volumes:
+  mssql_test:
+
