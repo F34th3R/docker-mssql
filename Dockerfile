@@ -6,8 +6,7 @@ LABEL "Project" "Microsoft SQL Server"
 RUN mkdir -p /var/opt/mssql/backup
 WORKDIR /var/opt/mssql/backup
 
-COPY ./backup/EFLOW40.bak ./
-# COPY ./backup/Northwind.bak ./
+COPY ./backup/Northwind.bak ./
 
 RUN mkdir -p /usr/config
 WORKDIR /usr/config/
