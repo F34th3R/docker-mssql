@@ -27,7 +27,7 @@ bak="/var/opt/mssql/backup/Northwind.bak"
 
 if [ ! -f "$file" ]
 then
-	echo "*********** Restoring databases: EFLOW40, ..." | tee -a ./config.log
+	echo "*********** Restoring databases: Northwind, ..." | tee -a ./config.log
 	/opt/mssql-tools/bin/sqlcmd -S 127.0.0.1 -U sa -P $MSSQL_SA_PASSWORD -d master -i /usr/config/setup.restore.sql && rm $bak
 else
   echo "*********** Attaching previously restored databases..." | tee -a ./config.log
