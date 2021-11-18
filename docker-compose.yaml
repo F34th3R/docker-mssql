@@ -1,14 +1,10 @@
 version: "3.9"
 services:
-  eflow:
-    container_name: eflow_db
+  northwind:
+    container_name: northwind_db
     build:
       context: .
       dockerfile: Dockerfile
-    hostname:
-        mssql-samplesdb
-    domainname:
-        eprac.com    
     environment:
       MSSQL_SA_PASSWORD: "PaSSw0rd"
       ACCEPT_EULA: "Y"

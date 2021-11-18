@@ -25,7 +25,6 @@ echo "======= MSSQL SERVER STARTED ========" | tee -a ./config.log
 file="/var/opt/mssql/data/Northwind.mdf"
 bak="/var/opt/mssql/backup/Northwind.bak"
 
-
 if [ ! -f "$file" ]
 then
 	echo "*********** Restoring databases: EFLOW40, ..." | tee -a ./config.log
