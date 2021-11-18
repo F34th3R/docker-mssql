@@ -1,16 +1,20 @@
 version: "3.9"
 services:
-  mssql_test:
-    container_name: msql_test
-    build: .
-    ports:
-      - "11433:1433"
+  eflow:
+    container_name: eflow_db
+    build:
+      context: .
+      dockerfile: Dockerfile
+    hostname:
+        mssql-samplesdb
+    domainname:
+        eprac.com    
     environment:
-      SA_PASSWORD: "secretp@assword"
-      ACCEPT_EULA: "y"
-      MSSQL_PID: "enterprise"
-    volumes:
-      - mssql_test:/var/opt/mssql
-volumes:
-  mssql_test:
-
+      MSSQL_SA_PASSWORD: "PaSSw0rd"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+      MSSQL_AGENT_ENABLED: "true"
+    ports:
+      - "14333:1433"        
+    cpu_count: 4
+    mem_limit: 4Gb
